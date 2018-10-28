@@ -7,6 +7,9 @@ import * as pkgd from 'pkgd';
 
 import { getTransformer } from '..';
 
+// in ci logs are not printed by lerna
+jest.mock('is-ci', () => false);
+
 const monorepoFixturePath = join(__dirname, '__fixtures__/monorepo');
 
 const monorepoFixture: execa.Options = {

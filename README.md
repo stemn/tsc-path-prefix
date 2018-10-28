@@ -1,5 +1,7 @@
 # TypeScript Compiler Path Prefixer
 
+[![CircleCI](https://circleci.com/gh/stemn/tsc-path-prefix/tree/master.svg?style=svg)](https://circleci.com/gh/stemn/tsc-path-prefix/tree/master)
+
 Fix VS Code terminal links when using `lerna` by prefixing file paths in `tsc` output.
 
 ## Motivation
@@ -118,3 +120,4 @@ cd tsc-path-prefix
 yarn install
 yarn test
 ```
+
