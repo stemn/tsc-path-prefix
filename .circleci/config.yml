@@ -7,14 +7,16 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          keys:
+          - node_modules-{{ checksum "yarn.lock" }}
+          - node_modules-
       - run:
           name: install
           command: yarn install
       - save_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          key: node_modules-{{ checksum "yarn.lock" }}
           paths:
-            - ./node_modules
+            - node_modules
       - run:
           name: test
           command: yarn test
