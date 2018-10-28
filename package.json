@@ -1,0 +1,47 @@
+{
+  "name": "@stemn/tsc-path-prefix",
+  "version": "0.0.3",
+  "description": "Prefix paths in Typescript compiler output for VS Code terminal path detection.",
+  "main": "build",
+  "repository": "https://github.com/stemn/tsc-path-prefix",
+  "author": "Jackson Delahunt",
+  "license": "MIT",
+  "bin": {
+    "tsc-path-prefix": "bin/index.js"
+  },
+  "private": false,
+  "scripts": {
+    "build": "yarn build:typescript",
+    "build:typescript": "tsc",
+    "build:watch": "yarn build:typescript --watch",
+    "lint": "yarn tslint --project tsconfig.lint.json",
+    "prepare": "yarn build:typescript",
+    "test": "jest",
+    "test:watch": "yarn test --watch"
+  },
+  "devDependencies": {
+    "@stemn/jest-config": "^0.0.9",
+    "@types/execa": "^0.9.0",
+    "@types/fs-extra": "^5.0.4",
+    "@types/get-stream": "^3.0.1",
+    "@types/lodash": "^4.14.117",
+    "@types/node": "^10.12.0",
+    "@types/split2": "^2.1.6",
+    "execa": "^1.0.0",
+    "fs-extra": "^7.0.0",
+    "get-stream": "^4.1.0",
+    "lerna": "^3.4.3",
+    "pkgd": "^1.1.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.3"
+  },
+  "dependencies": {
+    "@lerna/project": "^3.0.0",
+    "ansi-colors": "^3.2.1",
+    "lodash": "^4.17.11",
+    "slice-ansi": "^2.0.0",
+    "split2": "^3.0.0",
+    "strip-ansi": "^5.0.0"
+  }
+}

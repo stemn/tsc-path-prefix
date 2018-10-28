@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typescript compiler path prefixer can be used in a package.json script with yarn lerna run --prefix 1`] = `
+"[2K[1G[2m$ /tmp/monorepo-test/node_modules/.bin/lerna run build --parallel --stream[22m
+[36m[1m@monorepo/my-library[22m[39m: > @monorepo/my-library@0.0.1 build /tmp/monorepo-test/libraries/my-library
+[36m[1m@monorepo/my-library[22m[39m: > tsc
+[36m[1m@monorepo/my-library[22m[39m[39m: [96mlibraries/my-library/[39m[96m[96msrc/index.ts[0m:[93m9[0m:[93m6[0m - [91merror[0m[90m TS2339: [0mProperty 'badProperty' does not exist on type 'ITestInterface'.[39m
+[36m[1m@monorepo/my-library[22m[39m: [7m9[0m test.badProperty = 'error';
+[36m[1m@monorepo/my-library[22m[39m: [7m [0m [91m     ~~~~~~~~~~~[0m
+[2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.
+"
+`;
+
+exports[`Typescript compiler path prefixer can prefix tsc output wth a custom transformer 1`] = `
+"> @monorepo/my-library@0.0.1 build /tmp/monorepo-test/libraries/my-library
+> tsc
+[96mlibraries/my-library/[39m[96msrc/index.ts[0m:[93m9[0m:[93m6[0m - [91merror[0m[90m TS2339: [0mProperty 'badProperty' does not exist on type 'ITestInterface'.
+[7m9[0m test.badProperty = 'error';
+[7m [0m [91m     ~~~~~~~~~~~[0m
+"
+`;

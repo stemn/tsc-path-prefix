@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "pretty": true,
+    "strict": true,
+    "target": "es2017"
+  }
+}

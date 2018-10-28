@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@stemn/tsc-path-prefix": "^0.0.1",
+    "lerna": "^3.4.3"
+  },
+  "license": "MIT",
+  "name": "monorepo",
+  "scripts": {
+    "build": "yarn lerna run build --parallel --stream | tsc-path-prefix"
+  },
+  "version": "0.0.1"
+}
