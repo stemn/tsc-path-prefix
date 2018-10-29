@@ -43,5 +43,5 @@
     "test": "jest",
     "test:watch": "yarn test --watch"
   },
-  "version": "0.0.3"
+  "version": "0.0.5"
 }

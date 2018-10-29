@@ -4,6 +4,8 @@
 
 Fix VS Code terminal links when using `lerna` by prefixing file paths in `tsc` output.
 
+![VS Code Demo](demo.gif)
+
 ## Motivation
 
 When building TypeScript packages in a monorepository using `lerna`, file paths in `tsc` output are relative to the package folder, not the root folder of the monorepository. This breaks VS Code's terminal hyperlink functionality.
