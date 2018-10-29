@@ -1,11 +1,11 @@
 {
-  "name": "@monorepo/my-library",
-  "version": "0.0.1",
-  "license": "MIT",
   "devDependencies": {
     "typescript": "^3.1.3"
   },
+  "license": "MIT",
+  "name": "@monorepo/my-library",
   "scripts": {
     "build": "tsc"
-  }
+  },
+  "version": "0.0.1"
 }

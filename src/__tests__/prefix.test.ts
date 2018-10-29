@@ -1,6 +1,6 @@
 import { cyanBright } from 'ansi-colors';
 import * as execa from 'execa';
-import { copy, mkdirp } from 'fs-extra';
+import { copy, createReadStream, mkdirp } from 'fs-extra';
 import * as streamToString from 'get-stream';
 import { join } from 'path';
 import * as pkgd from 'pkgd';
@@ -32,7 +32,7 @@ beforeAll(async () => {
 
   // exclude node_modules when copying monorepo fixture
   await copy(monorepoFixturePath, monorepoFixture.cwd!, {
-    filter: (src) => !src.includes('node_modules')
+    filter: (src) => !src.includes('node_modules'),
   });
 
   // prepare monorepo fixture by installing dependencies and linking this package
@@ -65,6 +65,24 @@ describe('Typescript compiler path prefixer', () => {
     });
 
     const { stdout: tscOutput } = yarn(['lerna', 'run', 'build', '--stream', '--no-prefix']);
+    const transformedOutputStream = tscOutput.pipe(transform);
+    const output = await streamToString(transformedOutputStream);
+
+    expect(output).toMatchSnapshot();
+  });
+
+  it('adds a custom prefix in output that has no lerna.json present', async () => {
+
+    // matches typescript compiler errors without lerna package prefixes e.g.:
+    // src/index-test.ts:9:6 - error TS2339: Property 'badProperty' does...
+    const transform = await getTransformer({
+      cwd: monorepoFixture.cwd,
+      matcher: /^[a-zA-Z_\/\.]+\.ts:\d+:\d+ - /,
+      prefix: 'custom/prefix/',
+      transform: ({ prefix, line }) => `${cyanBright(prefix)}${line}\n`,
+    });
+
+    const tscOutput = createReadStream('src/__tests__/__fixtures__/bug-resolution/path-parsed-incorrectly.log');
     const transformedOutputStream = tscOutput.pipe(transform);
     const output = await streamToString(transformedOutputStream);
 

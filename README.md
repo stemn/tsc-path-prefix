@@ -120,4 +120,3 @@ cd tsc-path-prefix
 yarn install
 yarn test
 ```
-

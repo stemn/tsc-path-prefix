@@ -1,0 +1,16 @@
+[96msrc/api/routes/thread/ThreadUpdateRequest.ts[0m:[93m6[0m:[93m54[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../middleware'.
+
+[7m6[0m import { threadEventClientTransform, validate } from '../../middleware';
+[7m [0m [91m                                                     ~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/api/routes/user/UserListRequest.ts[0m:[93m5[0m:[93m46[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../middleware'.
+
+[7m5[0m import { populateCollection, validate } from '../../middleware';
+[7m [0m [91m                                             ~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/api/routes/workerTasks/WorkerTasksRetryRequest.ts[0m:[93m12[0m:[93m35[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../middleware'.
+
+[7m12[0m import { isAdmin, validate } from '../../middleware';
+[7m  [0m [91m                                  ~~~~~~~~~~~~~~~~~~[0m
+
+[[90m7:25:59 PM[0m] Found 73 errors. Watching for file changes.

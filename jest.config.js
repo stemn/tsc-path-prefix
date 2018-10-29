@@ -8,4 +8,3 @@ module.exports = {
   ],
   watchPathIgnorePatterns: ['src/__tests__/__fixtures__/**']
 };
-
