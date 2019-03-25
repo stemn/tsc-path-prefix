@@ -15,7 +15,7 @@ This utility prefixes file paths in `tsc` output so they are relative to the roo
 ## Install
 
 ```sh
-yarn add --dev tsc-path-prefix
+yarn add --dev @stemn/tsc-path-prefix
 ```
 
 ## Shell Usage
